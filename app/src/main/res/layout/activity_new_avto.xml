@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".newAvto">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/button14"
+                android:layout_width="119dp"
+                android:layout_height="wrap_content"
+                android:onClick="clickBackBtn"
+                android:text="Назад" />
+
+            <EditText
+                android:id="@+id/NameEdView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:hint="Название"
+                android:inputType="textPersonName" />
+
+            <RadioGroup
+                android:layout_width="386dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <RadioButton
+                    android:id="@+id/radioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Новое авто" />
+
+                <RadioButton
+                    android:id="@+id/radioButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Б/У авто" />
+
+                <RadioButton
+                    android:id="@+id/radioButton3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Битое авто" />
+
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/BodyEdView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:hint="Кузов"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/KomplektatsiyaEdView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:hint="Комплектация"
+                android:inputType="textPersonName" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="104dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal|center_vertical">
+
+                <ImageView
+                    android:id="@+id/imgViewAdd"
+                    android:layout_width="120dp"
+                    android:layout_height="99dp"
+                    app:srcCompat="@drawable/contacts" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="99dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal|center_vertical">
+
+                <Button
+                    android:id="@+id/button6"
+                    android:layout_width="209dp"
+                    android:layout_height="71dp"
+                    android:onClick="ClickAddImg1"
+                    android:text="Выбрать картинку" />
+
+                <Button
+                    android:id="@+id/button9"
+                    android:layout_width="128dp"
+                    android:layout_height="70dp"
+                    android:layout_weight="1"
+                    android:onClick="ClickAddImgBtn"
+                    android:text="Добавить картинку" />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/PriceEdView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:hint="Цена"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/DescriptionEdView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:hint="Текст"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/DataEdView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:hint="Дата"
+                android:inputType="textPersonName" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="119dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:onClick="ClickAddBtn"
+                android:text="Добавить" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

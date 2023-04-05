@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Car_podrobno"
+    tools:layout_editor_absoluteX="-2dp"
+    tools:layout_editor_absoluteY="262dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/button4"
+                    android:layout_width="93dp"
+                    android:layout_height="41dp"
+                    android:onClick="ClickBackBtn"
+                    android:text="Назад" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imgcar1"
+                android:layout_width="237dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="10dp"
+                app:srcCompat="@drawable/basket" />
+
+            <ImageView
+                android:id="@+id/imgcar2"
+                android:layout_width="235dp"
+                android:layout_height="108dp"
+                android:layout_marginTop="10dp"
+                app:srcCompat="@drawable/home" />
+
+            <ImageView
+                android:id="@+id/imgcar3"
+                android:layout_width="235dp"
+                android:layout_height="108dp"
+                android:layout_marginTop="10dp"
+                app:srcCompat="@drawable/home" />
+
+            <LinearLayout
+                android:layout_width="356dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="fill_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textSize="34sp" />
+
+                <TextView
+                    android:id="@+id/tvPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/tvBody"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tvdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tvDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tvEquipment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/button8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:onClick="ClickBronBtn"
+                android:text="Перейти к оформлению" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
