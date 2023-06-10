@@ -10,8 +10,28 @@
         android:id="@+id/imageView9"
         android:layout_width="410dp"
         android:layout_height="942dp"
-        android:tint="#99FFFFFF"
-        app:srcCompat="@drawable/fon" />
+        android:layout_marginEnd="1dp"
+        android:tint="#C3FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/fontri" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="ClickBackBtn"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/back" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -23,7 +43,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.32999998">
+        app:layout_constraintVertical_bias="0.42000002">
 
         <TextView
             android:id="@+id/textView6"
@@ -47,7 +67,7 @@
             android:hint="Логин/почта"
             android:inputType="textEmailAddress"
             android:textColor="#000000"
-            android:textColorHint="#000000"
+            android:textColorHint="#3E3E3E"
             android:textSize="16sp" />
 
         <EditText
@@ -60,7 +80,7 @@
             android:hint="Пароль"
             android:inputType="textPassword"
             android:textColor="#000000"
-            android:textColorHint="#000000"
+            android:textColorHint="#3E3E3E"
             android:textSize="16sp" />
 
         <EditText
@@ -73,7 +93,7 @@
             android:hint="Повторите пароль"
             android:inputType="textPassword"
             android:textColor="#000000"
-            android:textColorHint="#000000"
+            android:textColorHint="#3E3E3E"
             android:textSize="16sp" />
 
         <EditText
@@ -86,7 +106,7 @@
             android:hint="Введите телефон"
             android:inputType="phone"
             android:textColor="#000000"
-            android:textColorHint="#000000"
+            android:textColorHint="#3E3E3E"
             android:textSize="16sp" />
 
         <EditText
@@ -96,9 +116,10 @@
             android:layout_marginTop="15dp"
             android:background="#99FFFFFF"
             android:ems="10"
+            android:hint="Введите имя"
             android:inputType="textPersonName"
-            android:text="Введите имя"
             android:textColor="#000000"
+            android:textColorHint="#3E3E3E"
             android:textSize="16sp" />
 
         <EditText
@@ -108,21 +129,10 @@
             android:layout_marginTop="15dp"
             android:background="#99FFFFFF"
             android:ems="10"
+            android:hint="Введите город проживания"
             android:inputType="textPersonName"
-            android:text="Введите город"
             android:textColor="#000000"
-            android:textSize="16sp" />
-
-        <EditText
-            android:id="@+id/editTextTextPersonName3"
-            android:layout_width="280dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="15dp"
-            android:background="#99FFFFFF"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Введите страну"
-            android:textColor="#000000"
+            android:textColorHint="#3E3E3E"
             android:textSize="16sp" />
 
     </LinearLayout>

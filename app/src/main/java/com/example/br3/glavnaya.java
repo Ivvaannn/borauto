@@ -36,18 +36,16 @@ import java.util.ListIterator;
 
 public class glavnaya extends AppCompatActivity {
     private ListView listView;
-    private ArrayAdapter<String> adapter;
-    private List<String> listdata;
     private List<Car> listTemp;
     private DatabaseReference mBase;
     private String CarKeyNew = "Avto_New";
     private String CarKeyBU = "Avto_BU";
     private String CarKeyBit = "Avto_Bitoe";
-    private SearchView Finder;
     private Button bt;
-    String role;
     Integer ids;
     private TextView minpriceed, maxpriceed;
+    public ArrayList<Actions> arrayList;
+    public AdapterList adapters;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,39 +56,20 @@ public class glavnaya extends AppCompatActivity {
     }
 
     private void init() {
-        Intent intent = getIntent();
-        if (intent != null) {
-            role = intent.getStringExtra("Role");
-        }
-        Finder = findViewById(R.id.SearchView);
         listView = findViewById(R.id.listView);
         minpriceed = findViewById(R.id.minPriceEdit);
         maxpriceed = findViewById(R.id.MaxPriceEdit);
 
-        listdata = new ArrayList<>();
         listTemp = new ArrayList<>();
-        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listdata);
-        listView.setAdapter(adapter);
+        arrayList = new ArrayList<>();
+        adapters = new AdapterList(this, R.layout.list_row, arrayList);
+        listView.setAdapter(adapters);
 
         bt = findViewById(R.id.button5);
         mBase = FirebaseDatabase.getInstance().getReference(CarKeyNew);
         getDataFromDB();
-        Finder.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String s) {
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String s) {
-                adapter.getFilter().filter(s);
-                return false;
-            }
-        });
-        if (role != null) {
-            if (!role.equals("isAdmin")) {
-                bt.setVisibility(View.GONE);
-            }
+        if (!Roles.role.equals("isAdmin")) {
+            bt.setVisibility(View.GONE);
         }
     }
 
@@ -98,13 +77,13 @@ public class glavnaya extends AppCompatActivity {
         ValueEventListener valueEventListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (listdata.size() > 0) listdata.clear();
+                if (arrayList.size() > 0) arrayList.clear();
                 if (listTemp.size() > 0) listTemp.clear();
                 for (DataSnapshot ds : snapshot.getChildren()) {
                     if (maxpriceed.getText().toString().isEmpty() || minpriceed.getText().toString().isEmpty()) {
                         Car car = ds.getValue(Car.class);
                         assert car != null;
-                        listdata.add(car.date);
+                        arrayList.add(new Actions(R.drawable.car, car.name, "Цена: "+car.price+", год выпуска: "+car.date));
                         listTemp.add(car);
                     } else {
                         Car car = ds.getValue(Car.class);
@@ -113,12 +92,12 @@ public class glavnaya extends AppCompatActivity {
                         int maxprice = Integer.parseInt(maxpriceed.getText().toString());
                         int minprice = Integer.parseInt(minpriceed.getText().toString());
                         if (price >= minprice && price <= maxprice) {
-                            listdata.add(car.name);
+                            arrayList.add(new Actions(R.drawable.car, car.name, "Цена: "+car.price+", год выпуска: "+car.date));
                             listTemp.add(car);
                         }
                     }
                 }
-                adapter.notifyDataSetChanged();
+                adapters.notifyDataSetChanged();
                 ids = listView.getId();
             }
 
@@ -165,7 +144,7 @@ public class glavnaya extends AppCompatActivity {
     }
 
     public void ClickOrdersBtn(View view) {
-        Intent intent = new Intent(glavnaya.this, orders.class);
+        Intent intent = new Intent(glavnaya.this, Profile.class);
         startActivity(intent);
         finish();
     }

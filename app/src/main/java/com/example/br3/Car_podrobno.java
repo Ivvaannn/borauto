@@ -4,19 +4,20 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 public class Car_podrobno extends AppCompatActivity {
     TextView tvName, tvDescription, tvdate, tvEquipment,tvBody,tvPrice;
@@ -24,7 +25,6 @@ public class Car_podrobno extends AppCompatActivity {
     private DatabaseReference mBase;
     private FirebaseAuth mautch;
     private ImageView img1, img2, img3;
-    private Button btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,12 +33,12 @@ public class Car_podrobno extends AppCompatActivity {
         img2 = findViewById(R.id.imgcar2);
         img3 = findViewById(R.id.imgcar3);
         mautch = FirebaseAuth.getInstance();
-        tvName = findViewById(R.id.tvName);
-        tvDescription = findViewById(R.id.tvDescription);
-        tvdate = findViewById(R.id.tvdate);
+        tvName = findViewById(R.id.appNameCar);
+        tvDescription = findViewById(R.id.appEquipmentCar);
+        tvdate = findViewById(R.id.appDescriptionsCar);
         tvEquipment = findViewById(R.id.tvEquipment);
-        tvBody = findViewById(R.id.tvBody);
-        tvPrice = findViewById(R.id.tvPrice);
+        tvBody = findViewById(R.id.appDateCar);
+        tvPrice = findViewById(R.id.appCarPrice);
         getIntentMain();
         mBase = FirebaseDatabase.getInstance().getReference(Orders_Key);
     }
@@ -67,14 +67,13 @@ public class Car_podrobno extends AppCompatActivity {
     }
 
     public void ClickBronBtn(View view) {
-        String id = mBase.getKey();
-        String currentTime = Calendar.getInstance().getTime().toString();
+        String currentDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
         String id_user = mautch.getCurrentUser().getUid();
         Intent intent = new Intent(this, OrderOformlenie.class);
         intent.putExtra("Order_nameCar", namecar);
         intent.putExtra("Order_idCar", id_car);
         intent.putExtra("Order_idUser", id_user);
-        intent.putExtra("Order_date", currentTime);
+        intent.putExtra("Order_date", currentDate);
         intent.putExtra("Order_price", price_car);
         startActivity(intent);
         finish();

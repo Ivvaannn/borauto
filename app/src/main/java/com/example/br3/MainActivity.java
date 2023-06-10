@@ -40,11 +40,8 @@ public class MainActivity extends AppCompatActivity {
         mAuth.getCurrentUser();
     }
     public void ClickBtnVhod(View view) {
-        Intent intent = new Intent(MainActivity.this, glavnaya.class);
-        //intent.putExtra("Role", Roles.role);
-        startActivity(intent);
         if (email_login.getText().toString().isEmpty() || password_login.getText().toString().isEmpty()){
-            Toast.makeText(MainActivity.this, "Поля не могут быть пусты",Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "Введите почту и пароль!",Toast.LENGTH_SHORT).show();
         }else{
             mAuth.signInWithEmailAndPassword(email_login.getText().toString(),password_login.getText().toString())
                     .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -52,8 +49,6 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-
-                                /*
                                 FirebaseDatabase db = FirebaseDatabase.getInstance();
                                 DatabaseReference ref = db.getReference("Users");
                                 ref.addValueEventListener(new ValueEventListener() {
@@ -63,28 +58,38 @@ public class MainActivity extends AppCompatActivity {
                                             Users user = ds.getValue(Users.class);
                                             if(user.email.equals(email_login.getText().toString())) {
                                                 Roles.role = user.role;
-                                                Roles.Address = user.land +", "+user.city;
-                                                Roles.Id_Users = mAuth.getTenantId();
+                                                Roles.Address = user.city;
+                                                Roles.Email = user.email;
+                                                Roles.Name = user.name;
+                                                Roles.Phone = user.phone;
+                                                Roles.Password = user.password;
+                                                Roles.City = user.city;
+                                                Roles.Id_Users = user.id;
+                                                if(!user.img.equals("")) {
+                                                    Roles.Img = user.img;
+                                                }
+                                                Intent intent = new Intent(MainActivity.this, glavnaya.class);
+                                                startActivity(intent);
+                                                finish();
                                                 break;
                                             }
                                         }
-
-
                                     }
                                     @Override
                                     public void onCancelled(DatabaseError databaseError) {
                                     }
                                 });
-
-                                 */
-
                             } else {
-                                Toast.makeText(MainActivity.this, "Неверные данные", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(MainActivity.this, "Неверный логин или пароль, попробуйте заново.", Toast.LENGTH_SHORT).show();
                             }
-
-
                         }
                     });
         }
+    }
+
+    public void ClickBackBtn(View view) {
+        Intent intent = new Intent(MainActivity.this, avtoriz.class);
+        startActivity(intent);
+        finish();
     }
 }

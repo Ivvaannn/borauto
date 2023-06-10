@@ -29,7 +29,7 @@ public class newspodrobno extends AppCompatActivity {
             tvTitle.setText(intent.getStringExtra("News_title"));
             tvText.setText(intent.getStringExtra("News_text"));
             Picasso.get().load(intent.getStringExtra("News_img")).into(img);
-            tvDate.setText(intent.getStringExtra("News_date"));
+            tvDate.setText("Дата: "+intent.getStringExtra("News_date"));
         }
     }
 

@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Car_podrobno"
-    tools:layout_editor_absoluteX="-2dp"
-    tools:layout_editor_absoluteY="262dp">
+    tools:context=".applicationpodrobno">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -30,9 +28,10 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/imageView45"
+                    android:id="@+id/imageView44"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
+                    android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
                     android:onClick="ClickBackBtn"
@@ -103,13 +102,33 @@
                     android:text="TextView"
                     android:textSize="20sp" />
 
-                <TextView
-                    android:id="@+id/tvEquipment"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="TextView"
-                    android:textSize="20sp" />
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp">
 
+                    <RadioButton
+                        android:id="@+id/rbOdobreno"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Одобрено" />
+
+                    <RadioButton
+                        android:id="@+id/rbOtkloneno"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Отклонено" />
+
+                </RadioGroup>
+
+                <EditText
+                    android:id="@+id/editTextTextMultiLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:hint="Комментарий покупателю"
+                    android:inputType="textMultiLine" />
             </LinearLayout>
 
             <Button
@@ -118,8 +137,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:backgroundTint="#3F51B5"
-                android:onClick="ClickBronBtn"
-                android:text="Перейти к оформлению" />
+                android:onClick="ClickSaveApp"
+                android:text="Сохранить" />
 
         </LinearLayout>
     </ScrollView>

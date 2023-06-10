@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".aplicationview">
+
+    <ImageView
+        android:id="@+id/imageView41"
+        android:layout_width="411dp"
+        android:layout_height="52dp"
+        android:background="#3F51B5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/imageView38"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:onClick="ClickGlavnBtn"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView41"
+        app:layout_constraintEnd_toStartOf="@+id/imageView40"
+        app:layout_constraintHorizontal_bias="0.35"
+        app:layout_constraintStart_toStartOf="@+id/imageView41"
+        app:layout_constraintTop_toTopOf="@+id/imageView41"
+        app:srcCompat="@drawable/home" />
+
+    <ImageView
+        android:id="@+id/imageView39"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:onClick="ClickProfilebtn"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView41"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.65"
+        app:layout_constraintStart_toEndOf="@+id/imageView40"
+        app:layout_constraintTop_toTopOf="@+id/imageView41"
+        app:srcCompat="@drawable/contacts" />
+
+    <ImageView
+        android:id="@+id/imageView40"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:onClick="ClickNewsBtn"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView41"
+        app:layout_constraintEnd_toEndOf="@+id/imageView41"
+        app:layout_constraintStart_toStartOf="@+id/imageView41"
+        app:layout_constraintTop_toTopOf="@+id/imageView41"
+        app:srcCompat="@drawable/news" />
+
+    <ImageView
+        android:id="@+id/imageView36"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:background="#4E73D2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="Заявки"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView36"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView36" />
+
+    <ImageView
+        android:id="@+id/imageView37"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView36"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView36"
+        app:srcCompat="@drawable/icons" />
+
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:longClickable="true"
+        app:layout_constraintBottom_toTopOf="@+id/imageView41"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView36" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,14 +10,14 @@
         android:id="@+id/imageView6"
         android:layout_width="410dp"
         android:layout_height="942dp"
-        android:tint="#99FFFFFF"
+        android:tint="#C3FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.509"
-        app:srcCompat="@drawable/fon" />
+        app:srcCompat="@drawable/fontri" />
 
     <ImageView
         android:id="@+id/imageView7"
@@ -86,4 +86,5 @@
         app:layout_constraintEnd_toEndOf="@+id/imageView8"
         app:layout_constraintStart_toStartOf="@+id/imageView8"
         app:layout_constraintTop_toTopOf="@+id/imageView8" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

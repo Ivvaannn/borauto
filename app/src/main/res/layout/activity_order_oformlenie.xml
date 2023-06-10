@@ -2,9 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:onClick="OrderPerehodBtn"
+    android:layout_width="fill_parent"
+    android:layout_height="500dp"
     tools:context=".OrderOformlenie">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -30,92 +29,129 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="right"
+                    android:gravity="left"
                     android:orientation="vertical">
 
-                    <Button
-                        android:id="@+id/button4"
-                        android:layout_width="93dp"
-                        android:layout_height="41dp"
+                    <ImageView
+                        android:id="@+id/imageView47"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
                         android:onClick="ClickBackBtn"
-                        android:text="Назад" />
+                        app:srcCompat="@drawable/back" />
+
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="356dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:gravity="fill_horizontal"
                     android:orientation="vertical">
 
-                    <EditText
-                        android:id="@+id/idOrdered"
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:enabled="false"
-                        android:hint="Идентификатор заказа"
-                        android:inputType="textPersonName" />
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
 
-                    <EditText
-                        android:id="@+id/nameCarordered"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:enabled="false"
-                        android:hint="название машины"
-                        android:inputType="textPersonName" />
+                        <TextView
+                            android:id="@+id/textView8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Название машины"
+                            android:textSize="20sp" />
 
-                    <EditText
-                        android:id="@+id/idCarOrdered"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:enabled="false"
-                        android:hint="идентификатор машины"
-                        android:inputType="textPersonName" />
+                        <EditText
+                            android:id="@+id/nameCarordered"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:enabled="false"
+                            android:hint="название машины"
+                            android:inputType="textPersonName" />
+                    </LinearLayout>
 
-                    <EditText
-                        android:id="@+id/idUserOrdered"
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:enabled="false"
-                        android:hint="идентификатор пользователя"
-                        android:inputType="textPersonName" />
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
 
-                    <EditText
-                        android:id="@+id/dateOrdered"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:enabled="false"
-                        android:hint="дата заказа"
-                        android:inputType="textPersonName" />
+                        <TextView
+                            android:id="@+id/textView21"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:text="Дата заказа"
+                            android:textSize="20sp" />
 
-                    <EditText
-                        android:id="@+id/priceOrdered"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:enabled="false"
-                        android:hint="цена заказа"
-                        android:inputType="textPersonName" />
+                        <EditText
+                            android:id="@+id/dateOrdered"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:enabled="false"
+                            android:hint="дата заказа"
+                            android:inputType="textPersonName" />
+                    </LinearLayout>
 
-                    <EditText
-                        android:id="@+id/addressOrdered"
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:hint="Введите адресс доставки"
-                        android:inputType="textPersonName" />
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView22"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:text="Цена автомобиля"
+                            android:textSize="20sp" />
+
+                        <EditText
+                            android:id="@+id/priceOrdered"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:enabled="false"
+                            android:hint="цена заказа"
+                            android:inputType="textPersonName" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView23"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:text="Как с Вами связаться"
+                            android:textSize="20sp" />
+
+                        <EditText
+                            android:id="@+id/addressOrdered"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:ems="10"
+                            android:hint="Введите номер телефона"
+                            android:inputType="phone" />
+                    </LinearLayout>
 
                     <Button
                         android:id="@+id/button16"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:backgroundTint="#3F51B5"
                         android:onClick="ClickAddressBtn"
-                        android:text="Использовать место регистрации" />
+                        android:text="Использовать номер профиля" />
 
                 </LinearLayout>
 
@@ -124,6 +160,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:backgroundTint="#3F51B5"
                     android:onClick="ClickRedactorCar"
                     android:text="Забронировать авто" />
 
@@ -131,9 +168,10 @@
                     android:id="@+id/button17"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:backgroundTint="#3F51B5"
                     android:onClick="PerehodOrderBtn"
                     android:text="Перейти в корзину"
-                    android:visibility="gone" />
+                    android:visibility="invisible" />
 
             </LinearLayout>
         </ScrollView>

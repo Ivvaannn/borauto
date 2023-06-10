@@ -5,13 +5,10 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.database.Cursor;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -29,7 +26,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-import com.squareup.picasso.Picasso;
 
 import java.io.ByteArrayOutputStream;
 
@@ -51,13 +47,13 @@ public class newAvto extends AppCompatActivity {
         rb1 = findViewById(R.id.radioButton);
         rb2 = findViewById(R.id.radioButton2);
         rb3 = findViewById(R.id.radioButton3);
-        nameed = findViewById(R.id.NameEdView);
-        descriptioned = findViewById(R.id.DescriptionEdView);
-        dateed = findViewById(R.id.DataEdView);
-        equipmented = findViewById(R.id.KomplektatsiyaEdView);
+        nameed = findViewById(R.id.Nameed);
+        descriptioned = findViewById(R.id.Descripted);
+        dateed = findViewById(R.id.Dateed);
+        equipmented = findViewById(R.id.Komplekted);
         bodyed = findViewById(R.id.BodyEdView);
-        priceed = findViewById(R.id.PriceEdView);
-        img = findViewById(R.id.imgViewAdd);
+        priceed = findViewById(R.id.Priceed);
+        img = findViewById(R.id.imged);
         mStorageRef = FirebaseStorage.getInstance().getReference("Source");
         getIntentMain();
     }
@@ -123,13 +119,15 @@ public class newAvto extends AppCompatActivity {
                 category = "Б/У авто";
             }
             mBase = FirebaseDatabase.getInstance().getReference(AVTO_KEY);
-            String id = mBase.getKey();
             String carid = mBase.push().getKey();
 
-            Car avtoadd = new Car(id, category, carid, name, uploadUri.toString(), uploadUri2.toString(), uploadUri3.toString(), description, date, equipment, body, price);
-            if (!TextUtils.isEmpty(category) && !TextUtils.isEmpty(id) && !TextUtils.isEmpty(carid) && !TextUtils.isEmpty(name) && !TextUtils.isEmpty(carid) && !TextUtils.isEmpty(description) && !TextUtils.isEmpty(date) && !TextUtils.isEmpty(equipment) && !TextUtils.isEmpty(body) && !TextUtils.isEmpty(price) && !TextUtils.isEmpty(uploadUri.toString()) && !TextUtils.isEmpty(uploadUri2.toString()) && !TextUtils.isEmpty(uploadUri3.toString())) {
-                mBase.push().setValue(avtoadd);
-                Toast.makeText(newAvto.this, "Добавлено!", Toast.LENGTH_SHORT).show();
+            Car avtoadd = new Car(carid, category, carid, name, uploadUri.toString(), uploadUri2.toString(), uploadUri3.toString(), description, date, equipment, body, price);
+            if (!TextUtils.isEmpty(category) && !TextUtils.isEmpty(carid) && !TextUtils.isEmpty(carid) && !TextUtils.isEmpty(name) && !TextUtils.isEmpty(carid) && !TextUtils.isEmpty(description) && !TextUtils.isEmpty(date) && !TextUtils.isEmpty(equipment) && !TextUtils.isEmpty(body) && !TextUtils.isEmpty(price) && !TextUtils.isEmpty(uploadUri.toString()) && !TextUtils.isEmpty(uploadUri2.toString()) && !TextUtils.isEmpty(uploadUri3.toString())) {
+                mBase.child(carid).setValue(avtoadd);
+                Toast.makeText(newAvto.this, "Автомобиль успешно добавлен!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this, glavnaya.class);
+                startActivity(intent);
+                finish();
 
             } else {
                 Toast.makeText(newAvto.this, "Возможно некоторые поля пустые!", Toast.LENGTH_SHORT).show();

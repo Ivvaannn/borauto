@@ -24,15 +24,18 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="right"
+                android:gravity="left"
                 android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/button4"
-                    android:layout_width="93dp"
-                    android:layout_height="41dp"
+                <ImageView
+                    android:id="@+id/imageView48"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
                     android:onClick="ClickBackBtn"
-                    android:text="Назад" />
+                    app:srcCompat="@drawable/back" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -42,69 +45,108 @@
                 android:gravity="fill_horizontal"
                 android:orientation="vertical">
 
-                <EditText
-                    android:id="@+id/idOrdered"
+                <TextView
+                    android:id="@+id/textView25"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="Name" />
+                    android:text="Автомобиль"
+                    android:textAlignment="center"
+                    android:textSize="20sp" />
 
                 <EditText
                     android:id="@+id/nameCarordered"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
+                    android:enabled="false"
                     android:inputType="textPersonName"
-                    android:text="Name" />
+                    android:text="Name"
+                    android:textSize="20sp" />
 
-                <EditText
-                    android:id="@+id/idCarOrdered"
+                <TextView
+                    android:id="@+id/textView26"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="Name" />
-
-                <EditText
-                    android:id="@+id/idUserOrdered"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="Name" />
+                    android:text="Дата брони"
+                    android:textAlignment="center"
+                    android:textSize="20sp" />
 
                 <EditText
                     android:id="@+id/dateOrdered"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
+                    android:enabled="false"
                     android:inputType="textPersonName"
-                    android:text="Name" />
+                    android:text="Name"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textView27"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Цена автомобиля"
+                    android:textAlignment="center"
+                    android:textSize="20sp" />
 
                 <EditText
                     android:id="@+id/priceOrdered"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
+                    android:enabled="false"
                     android:inputType="textPersonName"
-                    android:text="Name" />
+                    android:text="Name"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textView28"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Телефон для связи"
+                    android:textAlignment="center"
+                    android:textSize="20sp" />
 
                 <EditText
                     android:id="@+id/addressOrdered"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
+                    android:enabled="false"
                     android:inputType="textPersonName"
-                    android:text="Name" />
+                    android:text="Name"
+                    android:textSize="20sp" />
 
-                <EditText
-                    android:id="@+id/statusOrdered"
+                <TextView
+                    android:id="@+id/textView29"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="Name" />
+                    android:text="Статус брони"
+                    android:textAlignment="center"
+                    android:textSize="20sp" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <RadioButton
+                        android:id="@+id/newstatusbtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="На рассмотрении" />
+
+                    <RadioButton
+                        android:id="@+id/otklonenostatusbtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Отклонено" />
+
+                    <RadioButton
+                        android:id="@+id/odobrenostatusbtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Одобрено" />
+                </RadioGroup>
             </LinearLayout>
 
             <Button
@@ -112,8 +154,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:backgroundTint="#3F51B5"
                 android:onClick="ClickRedactorCar"
-                android:text="Изменить бронь" />
+                android:text="Изменить бронь"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/button20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#3F51B5"
+                android:onClick="ClickRemovebtn"
+                android:text="Удалить бронь"
+                android:textSize="16sp" />
 
         </LinearLayout>
     </ScrollView>

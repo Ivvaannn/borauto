@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".newAvto">
+    tools:context=".aplication">
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -27,49 +28,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:ems="10"
-                android:hint="Название"
-                android:inputType="textPersonName" />
-
-            <TextView
-                android:id="@+id/textView18"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Категория авто:"
-                android:textAlignment="center"
-                android:textSize="16sp" />
-
-            <RadioGroup
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
-
-                <RadioButton
-                    android:id="@+id/radioButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Новое авто" />
-
-                <RadioButton
-                    android:id="@+id/radioButton2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Б/У авто" />
-
-                <RadioButton
-                    android:id="@+id/radioButton3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Битое авто" />
-
-            </RadioGroup>
-
-            <EditText
-                android:id="@+id/BodyEdView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:ems="10"
-                android:hint="Тип кузова"
+                android:hint="Название машины"
                 android:inputType="textPersonName" />
 
             <EditText
@@ -80,6 +39,15 @@
                 android:ems="10"
                 android:hint="Комплектация"
                 android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Добавте 3 фото автомобиля!"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -106,7 +74,7 @@
                     android:layout_width="209dp"
                     android:layout_height="71dp"
                     android:backgroundTint="#3F51B5"
-                    android:onClick="ClickAddImg1"
+                    android:onClick="ClickNewImg"
                     android:text="Выбрать картинку" />
 
                 <Button
@@ -115,7 +83,7 @@
                     android:layout_height="70dp"
                     android:layout_weight="1"
                     android:backgroundTint="#3F51B5"
-                    android:onClick="ClickAddImgBtn"
+                    android:onClick="ClickNewImgUri"
                     android:text="Добавить картинку" />
 
             </LinearLayout>
@@ -126,8 +94,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:ems="10"
-                android:hint="Цена"
-                android:inputType="number" />
+                android:hint="Желаемая цена авто"
+                android:inputType="textPersonName" />
 
             <EditText
                 android:id="@+id/Descripted"
@@ -144,8 +112,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:ems="10"
-                android:hint="Дата"
-                android:inputType="date" />
+                android:hint="Дата выпуска авто"
+                android:inputType="textPersonName" />
 
             <Button
                 android:id="@+id/button3"
@@ -153,19 +121,19 @@
                 android:layout_height="60dp"
                 android:layout_marginTop="10dp"
                 android:backgroundTint="#3F51B5"
-                android:onClick="ClickAddBtn"
+                android:onClick="AddClick"
                 android:text="Добавить" />
 
         </LinearLayout>
     </ScrollView>
 
     <ImageView
-        android:id="@+id/imageView46"
+        android:id="@+id/imageView43"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:onClick="clickBackBtn"
+        android:onClick="ClickBack"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
