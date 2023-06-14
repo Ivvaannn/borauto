@@ -41,6 +41,7 @@ public class glavnaya extends AppCompatActivity {
     private String CarKeyNew = "Avto_New";
     private String CarKeyBU = "Avto_BU";
     private String CarKeyBit = "Avto_Bitoe";
+    private String CurrentKey;
     private Button bt;
     Integer ids;
     private TextView minpriceed, maxpriceed;
@@ -151,16 +152,19 @@ public class glavnaya extends AppCompatActivity {
 
     public void ClickNewAvtoBtn(View view) {
         mBase = FirebaseDatabase.getInstance().getReference(CarKeyNew);
+        CurrentKey = CarKeyNew;
         getDataFromDB();
     }
 
     public void ClickBUAvtoBtn(View view) {
         mBase = FirebaseDatabase.getInstance().getReference(CarKeyBU);
+        CurrentKey = CarKeyBU;
         getDataFromDB();
     }
 
     public void ClickBitAvtoBtn(View view) {
         mBase = FirebaseDatabase.getInstance().getReference(CarKeyBit);
+        CurrentKey = CarKeyBit;
         getDataFromDB();
     }
 

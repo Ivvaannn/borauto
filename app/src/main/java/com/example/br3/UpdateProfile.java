@@ -54,7 +54,7 @@ public class UpdateProfile extends AppCompatActivity {
         }
     }
 
-    public void LoadImageClick(View view) {
+    public void UpdateImageClick (View view) {
         Intent intentChooser = new Intent();
         intentChooser.setType("image/*");
         intentChooser.setAction(Intent.ACTION_GET_CONTENT);
@@ -63,7 +63,7 @@ public class UpdateProfile extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 1&&data !=null && data.getData () != null);
+        if (requestCode == 1 && data !=null && data.getData () != null);
         {
             if (resultCode == RESULT_OK)
             {
@@ -75,6 +75,7 @@ public class UpdateProfile extends AppCompatActivity {
     }
 
     private void uploadImage1() {
+        Toast.makeText(UpdateProfile.this,"Загрузка фото...",Toast.LENGTH_SHORT).show();
         Bitmap bitmap = ((BitmapDrawable) avatImg.getDrawable()).getBitmap();
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
@@ -90,6 +91,7 @@ public class UpdateProfile extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<Uri> task) {
                 uploadUri = task.getResult();
+                Toast.makeText(UpdateProfile.this,"Фото загружено!",Toast.LENGTH_SHORT).show();
             }
         });
     }

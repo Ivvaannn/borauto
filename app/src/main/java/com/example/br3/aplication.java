@@ -80,10 +80,6 @@ public class aplication extends AppCompatActivity {
     }
 
     public void saveData() {
-        if(uploadUri3 == null && uploadUri2 == null && uploadUri == null){
-            Toast.makeText(aplication.this,"Добавте три картинки!",Toast.LENGTH_SHORT).show();
-        }
-        else {
             String name = nametxt.getText().toString();
             String description = descriptiontxt.getText().toString();
             String date = datetxt.getText().toString();
@@ -92,17 +88,18 @@ public class aplication extends AppCompatActivity {
             mBase = FirebaseDatabase.getInstance().getReference(key);
             String Appkey = mBase.push().getKey();
             String id_user = Roles.Id_Users;
-
-            Applications app = new Applications(Appkey, name, date, description, equipment, price, id_user, uploadUri.toString(), uploadUri2.toString(), uploadUri3.toString(), "новая", " ");
-            if (!TextUtils.isEmpty(Appkey) && !TextUtils.isEmpty(name) && !TextUtils.isEmpty(description) && !TextUtils.isEmpty(date) && !TextUtils.isEmpty(equipment) && !TextUtils.isEmpty(price) && !TextUtils.isEmpty(uploadUri.toString()) && !TextUtils.isEmpty(uploadUri2.toString()) && !TextUtils.isEmpty(uploadUri3.toString())) {
+            if (!TextUtils.isEmpty(Appkey) && !TextUtils.isEmpty(name) && !TextUtils.isEmpty(description) && !TextUtils.isEmpty(date) && !TextUtils.isEmpty(equipment) && !TextUtils.isEmpty(price) &&  uploadUri != null && uploadUri2 != null && uploadUri3 != null) {
+                Applications app = new Applications(Appkey, name, date, description, equipment, price, id_user, uploadUri.toString(), uploadUri2.toString(), uploadUri3.toString(), "новая", " ");
                 mBase.child(Appkey).setValue(app);
                 Toast.makeText(aplication.this, "Заявка успешно добавлена!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this, aplicationview.class);
+                startActivity(intent);
+                finish();
 
             } else {
-                Toast.makeText(aplication.this, "Необходимо заполнить все поля!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(aplication.this, "Необходимо заполнить все поля и добавить 3 фото автомобиля!", Toast.LENGTH_SHORT).show();
             }
         }
-    }
     public void ClickNewImg(View view) {
         Intent intentChooser = new Intent();
         intentChooser.setType("image/*");

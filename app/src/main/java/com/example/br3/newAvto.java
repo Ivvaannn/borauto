@@ -37,7 +37,6 @@ public class newAvto extends AppCompatActivity {
     private ImageView img;
     private RadioButton rb1, rb2,rb3;
     private String AVTO_KEY = "Avto_New";
-    private Button btn;
     String Carid;
     private  String category = "Новые авто";
     @Override
@@ -86,25 +85,21 @@ public class newAvto extends AppCompatActivity {
             public void onComplete(@NonNull Task<Uri> task) {
                 if(uploadUri == null){
                     uploadUri = task.getResult();
-                    Toast.makeText(newAvto.this,"Добавлена первая картинка!!",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(newAvto.this,"Добавлена первая картинка!",Toast.LENGTH_SHORT).show();
                 }
                 else if(uploadUri2 == null) {
                     uploadUri2 = task.getResult();
-                    Toast.makeText(newAvto.this,"Добавлена вторая картинка!!",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(newAvto.this,"Добавлена вторая картинка!",Toast.LENGTH_SHORT).show();
                 }
                 else if(uploadUri3 == null){
                     uploadUri3 = task.getResult();
-                    Toast.makeText(newAvto.this,"Добавлена третья картинка!!",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(newAvto.this,"Добавлена третья картинка!",Toast.LENGTH_SHORT).show();
                 }
             }
         });
     }
 
     public void saveData() {
-        if(uploadUri3 == null && uploadUri2 == null && uploadUri == null){
-            Toast.makeText(newAvto.this,"Добавте три картинки!",Toast.LENGTH_SHORT).show();
-        }
-        else {
             String name = nameed.getText().toString();
             String description = descriptioned.getText().toString();
             String date = dateed.getText().toString();
@@ -120,9 +115,8 @@ public class newAvto extends AppCompatActivity {
             }
             mBase = FirebaseDatabase.getInstance().getReference(AVTO_KEY);
             String carid = mBase.push().getKey();
-
-            Car avtoadd = new Car(carid, category, carid, name, uploadUri.toString(), uploadUri2.toString(), uploadUri3.toString(), description, date, equipment, body, price);
-            if (!TextUtils.isEmpty(category) && !TextUtils.isEmpty(carid) && !TextUtils.isEmpty(carid) && !TextUtils.isEmpty(name) && !TextUtils.isEmpty(carid) && !TextUtils.isEmpty(description) && !TextUtils.isEmpty(date) && !TextUtils.isEmpty(equipment) && !TextUtils.isEmpty(body) && !TextUtils.isEmpty(price) && !TextUtils.isEmpty(uploadUri.toString()) && !TextUtils.isEmpty(uploadUri2.toString()) && !TextUtils.isEmpty(uploadUri3.toString())) {
+            if (!TextUtils.isEmpty(category) && !TextUtils.isEmpty(carid) && !TextUtils.isEmpty(carid) && !TextUtils.isEmpty(name) && !TextUtils.isEmpty(carid) && !TextUtils.isEmpty(description) && !TextUtils.isEmpty(date) && !TextUtils.isEmpty(equipment) && !TextUtils.isEmpty(body) && !TextUtils.isEmpty(price) && uploadUri != null && uploadUri2 != null && uploadUri3 != null) {
+                Car avtoadd = new Car(carid, category, carid, name, uploadUri.toString(), uploadUri2.toString(), uploadUri3.toString(), description, date, equipment, body, price);
                 mBase.child(carid).setValue(avtoadd);
                 Toast.makeText(newAvto.this, "Автомобиль успешно добавлен!", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(this, glavnaya.class);
@@ -130,9 +124,8 @@ public class newAvto extends AppCompatActivity {
                 finish();
 
             } else {
-                Toast.makeText(newAvto.this, "Возможно некоторые поля пустые!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(newAvto.this, "Необходимо заполнить все поля и выбрать 3 фото!", Toast.LENGTH_SHORT).show();
             }
-        }
     }
     public void ClickAddImg1(View view) {
         Intent intentChooser = new Intent();

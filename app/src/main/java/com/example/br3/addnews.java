@@ -91,7 +91,7 @@ public class addnews extends AppCompatActivity {
         String title = titleed.getText().toString();
         String date = dataed.getText().toString();
         String text = texted.getText().toString();
-        if (!TextUtils.isEmpty(title) && !TextUtils.isEmpty(date) && !TextUtils.isEmpty(text) && !TextUtils.isEmpty(uploadUri.toString())) {
+        if (!TextUtils.isEmpty(title) && !TextUtils.isEmpty(date) && !TextUtils.isEmpty(text) && uploadUri != null) {
             News newsadd = new News(id, title, text, uploadUri.toString(), date);
             mBase.child(id).setValue(newsadd);
             Toast.makeText(addnews.this, "Новость успешно добавлена!", Toast.LENGTH_SHORT).show();
@@ -99,7 +99,7 @@ public class addnews extends AppCompatActivity {
             startActivity(intent);
             finish();
         } else {
-            Toast.makeText(addnews.this, "Необходимо заполнить все поля!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(addnews.this, "Необходимо заполнить все поля и выбрать фото!", Toast.LENGTH_SHORT).show();
         }
     }
     public void ClickBackBtn(View view) {

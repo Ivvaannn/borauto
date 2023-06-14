@@ -66,11 +66,11 @@ public class OrderOformlenie extends AppCompatActivity {
         if (!TextUtils.isEmpty(id) && !TextUtils.isEmpty(Order_idCar) && !TextUtils.isEmpty(id_user) && !TextUtils.isEmpty(currentDate) && !TextUtils.isEmpty(Order_address.getText().toString()) && !TextUtils.isEmpty(Order_price.getText().toString())) {
             mBase.child(id).setValue(order);
             Toast.makeText(OrderOformlenie.this, "Добавлено в корзину!", Toast.LENGTH_SHORT).show();
+            btnperehod.setVisibility(View.VISIBLE);
+            btnoforml.setVisibility(View.GONE);
         } else {
             Toast.makeText(OrderOformlenie.this, "Заполните все поля и повторите попытку!", Toast.LENGTH_SHORT).show();
         }
-        btnperehod.setVisibility(View.VISIBLE);
-        btnoforml.setVisibility(View.GONE);
     }
 
     public void ClickAddressBtn(View view) {
