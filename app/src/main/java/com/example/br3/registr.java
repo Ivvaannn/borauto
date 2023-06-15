@@ -31,10 +31,18 @@ public class registr extends AppCompatActivity {
         telefon = findViewById(R.id.editTextPhone);
         nameed = findViewById(R.id.editTextTextPersonName);
         cityed = findViewById(R.id.editTextTextPersonName2);
-
         String USER_KEY = "Users";
         mBase = FirebaseDatabase.getInstance().getReference(USER_KEY);
         mAuth = FirebaseAuth.getInstance();
+        Roles.City = "";
+        Roles.Id_Users = "";
+        Roles.role = "";
+        Roles.Phone = "";
+        Roles.Password = "";
+        Roles.Email = "";
+        Roles.Address = "";
+        Roles.Img = null;
+        Roles.Name = "";
     }
 
     public void ClickRegBtn(View view) {
@@ -42,7 +50,7 @@ public class registr extends AppCompatActivity {
                 || nameed.getText().toString().isEmpty() ||  cityed.getText().toString().isEmpty()) {
             Toast.makeText(registr.this, "Необходимо заполнить все поля!", Toast.LENGTH_SHORT).show();
         }
-        else if (password1.getText().equals(password2.getText())){
+        if (!password1.getText().toString().equals(password2.getText().toString())){
             Toast.makeText(registr.this, "Пароли не совпадают!", Toast.LENGTH_SHORT).show();
         }
         else if(password1.getText().toString().length()<5){

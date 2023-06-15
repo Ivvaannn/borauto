@@ -72,8 +72,16 @@ public class Profile extends AppCompatActivity {
 
     public void ExitBtnClick(View view) {
         Intent intent = new Intent(this, avtoriz.class);
+        Roles.City = "";
+        Roles.Id_Users = "";
+        Roles.role = "";
+        Roles.Phone = "";
+        Roles.Password = "";
+        Roles.Email = "";
+        Roles.Address = "";
+        Roles.Img = null;
+        Roles.Name = "";
         startActivity(intent);
         finish();
-
     }
 }

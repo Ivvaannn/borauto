@@ -108,16 +108,19 @@ public class UpdateProfile extends AppCompatActivity {
         }
         else{
             image = uploadUri.toString();
+            Roles.Img = uploadUri.toString();
         }
 
         if (!TextUtils.isEmpty(nametxt)&&!TextUtils.isEmpty(emailtxt)&&!TextUtils.isEmpty(passwordtxt)&&!TextUtils.isEmpty(image)&& !TextUtils.isEmpty(Roles.role)){
             Users user = new Users(id,nametxt,emailtxt,passwordtxt,phonetxt,citytxt,Roles.role,image);
             if (id != null) {
                 mBase.child(id).setValue(user);
+                Roles.Name = nametxt;
+                Roles.Phone = phonetxt;
+                Roles.City = citytxt;
                 Toast.makeText(UpdateProfile.this, "Данные успешно изменены!", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(this, Profile.class);
                 startActivity(intent);
-                finish();
             }
         }else{
             Toast.makeText(UpdateProfile.this,"Необходимо заполнить все поля!",Toast.LENGTH_SHORT).show();
