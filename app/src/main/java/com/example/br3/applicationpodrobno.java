@@ -47,7 +47,7 @@ public class applicationpodrobno extends AppCompatActivity {
             bt.setVisibility(View.INVISIBLE);
             rbotkloneno.setEnabled(false);
             rbodobreno.setEnabled(false);
-            tvkomment.setVisibility(View.INVISIBLE);
+            tvkomment.setEnabled(false);
         }
         getIntentMain();
         mBase = FirebaseDatabase.getInstance().getReference(App_Key);
