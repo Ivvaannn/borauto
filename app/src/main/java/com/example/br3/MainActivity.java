@@ -38,8 +38,18 @@ public class MainActivity extends AppCompatActivity {
         password_login = findViewById(R.id.editTextTextPassword);
         mAuth = FirebaseAuth.getInstance();
         mAuth.getCurrentUser();
+        Roles.City = "";
+        Roles.Id_Users = "";
+        Roles.role = "";
+        Roles.Phone = "";
+        Roles.Password = "";
+        Roles.Email = "";
+        Roles.Address = "";
+        Roles.Img = null;
+        Roles.Name = "";
     }
     public void ClickBtnVhod(View view) {
+        mAuth.signOut();
         if (email_login.getText().toString().isEmpty() || password_login.getText().toString().isEmpty()){
             Toast.makeText(MainActivity.this, "Введите почту и пароль!",Toast.LENGTH_SHORT).show();
         }else{

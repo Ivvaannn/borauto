@@ -34,6 +34,10 @@ public class registr extends AppCompatActivity {
         String USER_KEY = "Users";
         mBase = FirebaseDatabase.getInstance().getReference(USER_KEY);
         mAuth = FirebaseAuth.getInstance();
+    }
+
+    public void ClickRegBtn(View view) {
+        mAuth.signOut();
         Roles.City = "";
         Roles.Id_Users = "";
         Roles.role = "";
@@ -43,9 +47,6 @@ public class registr extends AppCompatActivity {
         Roles.Address = "";
         Roles.Img = null;
         Roles.Name = "";
-    }
-
-    public void ClickRegBtn(View view) {
         if (mail.getText().toString().isEmpty() || password1.getText().toString().isEmpty() || password2.getText().toString().isEmpty()  || telefon.getText().toString().isEmpty()
                 || nameed.getText().toString().isEmpty() ||  cityed.getText().toString().isEmpty()) {
             Toast.makeText(registr.this, "Необходимо заполнить все поля!", Toast.LENGTH_SHORT).show();

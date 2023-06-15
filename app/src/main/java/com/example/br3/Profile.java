@@ -9,12 +9,14 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.squareup.picasso.Picasso;
 
 
 public class Profile extends AppCompatActivity {
     public TextView phonetw, emailtw, addresstw, nametw;
     public ImageView avatar;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,7 @@ public class Profile extends AppCompatActivity {
         if(Roles.Img != null){
           Picasso.get().load(Roles.Img).into(avatar);
        }
+        mAuth = FirebaseAuth.getInstance();
     }
 
     public void clickUpdateProfile(View view) {
@@ -71,17 +74,6 @@ public class Profile extends AppCompatActivity {
     }
 
     public void ExitBtnClick(View view) {
-        Intent intent = new Intent(this, avtoriz.class);
-        Roles.City = "";
-        Roles.Id_Users = "";
-        Roles.role = "";
-        Roles.Phone = "";
-        Roles.Password = "";
-        Roles.Email = "";
-        Roles.Address = "";
-        Roles.Img = null;
-        Roles.Name = "";
-        startActivity(intent);
-        finish();
+        System.exit(0);
     }
 }
